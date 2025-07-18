@@ -1,0 +1,254 @@
+
+.games-container {
+    animation: fadeIn 0.5s ease-out;
+    margin-bottom: 32px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Games list */
+.games-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+/* Game card */
+.game-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+    position: relative;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+    border-left-width: 4px;
+    user-select: none; /* Prevent text selection */
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    border-color: var(--primary);
+}
+
+.game-card.dragging {
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+    background-color: rgba(34, 34, 46, 0.9);
+    transform: scale(1.02);
+    z-index: 100 !important;
+}
+
+/* Game card header */
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.game-header h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.game-actions {
+    display: flex;
+    gap: 8px;
+    z-index: 2; /* Make sure buttons are clickable */
+}
+
+.game-actions button {
+    background-color: transparent;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.game-actions .edit-btn {
+    color: var(--primary);
+}
+
+.game-actions .edit-btn:hover {
+    background-color: rgba(65, 114, 227, 0.15);
+}
+
+.game-actions .delete-btn {
+    color: var(--error);
+}
+
+.game-actions .delete-btn:hover {
+    background-color: rgba(244, 84, 84, 0.15);
+}
+
+/* Game details */
+.game-details {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 16px;
+}
+
+.game-detail {
+    display: flex;
+    gap: 6px;
+}
+
+.game-detail .label {
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.game-detail .value {
+    color: var(--text-light);
+}
+
+/* Game description */
+.game-description {
+    margin-bottom: 16px;
+    padding: 10px 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.game-description p {
+    margin: 0;
+    color: var(--text-light);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Color indicator */
+.game-color-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.color-label {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.color-preview {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
+/* Drag handle */
+.game-drag-handle {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    color: var(--text-muted);
+    font-size: 16px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: grab; /* Explicit grab cursor */
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.game-drag-handle:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--primary);
+}
+
+.game-drag-handle:active {
+    cursor: grabbing;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* No data message */
+.no-data-message {
+    text-align: center;
+    padding: 40px 0;
+    color: var(--text-muted);
+    font-size: 16px;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    border: 2px dashed var(--border-color);
+    margin: 20px 0;
+}
+
+/* Global style when dragging is happening */
+body.dragging {
+    cursor: grabbing !important;
+    user-select: none !important;
+}
+
+body.dragging * {
+    cursor: grabbing !important;
+}
+
+.dragging-active {
+    cursor: grabbing;
+}
+
+/* Color picker in form */
+.color-picker-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.color-picker-container input[type="color"] {
+    width: 50px;
+    height: 40px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.color-display {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 4px;
+    color: white;
+    font-size: 14px;
+    font-family: monospace;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .game-details {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .game-actions {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+    }
+
+    .game-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-right: 80px;
+    }
+}

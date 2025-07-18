@@ -1,0 +1,462 @@
+/* GameParticipants.css - Estilo específico e compatível com o tema do site */
+
+/* Namespace principal para evitar conflitos */
+.games{
+    background-color: var(--bg-color);
+}
+.cs-games-container {
+    font-family: var(--font-1);
+    width: 100%;
+    padding: 15px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 100px auto 0 auto;
+    max-width: 1200px;
+}
+
+/* Título principal - Estilo consistente com outras seções */
+.cs-games-container .cs-main-title {
+    text-align: center;
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--text-color);
+    margin-bottom: 40px;
+    padding-bottom: 15px;
+    position: relative;
+    text-transform: uppercase;
+    font-family: var(--font-2);
+    letter-spacing: 1px;
+}
+
+.cs-games-container .cs-main-title::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--text-color);
+}
+
+.cs-games-container .cs-section-title {
+    color: var(--text-color);
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    padding-bottom: 10px;
+    position: relative;
+    font-family: var(--font-2);
+}
+
+.cs-games-container .cs-section-title::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--secondary-color);
+}
+
+.cs-games-container .cs-games-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.cs-games-container .cs-game-card {
+    background-color: rgba(26, 32, 44, 0.8);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.cs-games-container .cs-game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.cs-games-container .cs-game-header {
+    background-color: var(--secondary-color);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cs-games-container .cs-game-title {
+    margin: 0;
+    font-size: 22px;
+    color: var(--text-color);
+    font-weight: 700;
+    font-family: var(--font-1);
+}
+
+.cs-games-container .cs-game-date {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: var(--font-3);
+}
+
+/* Botão de ver detalhes */
+.cs-games-container .cs-game-actions {
+    padding: 15px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cs-games-container .cs-details-button {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: var(--font-1);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.cs-games-container .cs-details-button:hover {
+    background-color: #165e73; /* Versão mais clara da cor secundária */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.cs-games-container .cs-participants-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    padding: 15px;
+}
+
+@media (max-width: 600px) {
+    .cs-games-container .cs-participants-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.cs-games-container .cs-participant {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(26, 32, 44, 0.5);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.cs-games-container .cs-participant:hover {
+    background-color: rgba(26, 32, 44, 0.8);
+    transform: translateY(-2px);
+}
+
+.cs-games-container .cs-participant-icon {
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.cs-games-container .cs-participant-image {
+    width: 48px !important;
+    height: 48px !important;
+    min-width: 48px !important;
+    min-height: 48px !important;
+    max-width: 48px !important;
+    max-height: 48px !important;
+    image-rendering: pixelated !important;
+    display: inline-block !important;
+}
+
+.cs-games-container .cs-participant-icon-placeholder {
+    width: 48px !important;
+    height: 48px !important;
+    min-width: 48px !important;
+    min-height: 48px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.cs-games-container .cs-participant-name {
+    font-size: 13px;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--text-color);
+    font-family: var(--font-1);
+}
+
+/* Modal de detalhes do jogo */
+.cs-game-details-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s;
+}
+
+.cs-game-details-modal.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cs-game-details-modal .cs-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: -1;
+}
+
+.cs-game-details-modal .cs-modal-content {
+    background-color: var(--bg-color);
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.cs-game-details-modal.open .cs-modal-content {
+    transform: scale(1);
+}
+
+.cs-game-details-modal .cs-modal-header {
+    padding: 20px;
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cs-game-details-modal .cs-modal-header h2 {
+    margin: 0;
+    color: var(--text-color);
+    font-size: 24px;
+    font-family: var(--font-2);
+}
+
+.cs-game-details-modal .cs-close-modal {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 28px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.cs-game-details-modal .cs-close-modal:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.cs-game-details-modal .cs-modal-body {
+    padding: 25px;
+    overflow-y: auto;
+}
+
+.cs-game-details-modal .cs-game-info {
+    margin-bottom: 30px;
+}
+
+.cs-game-details-modal .cs-info-item {
+    margin-bottom: 20px;
+}
+
+.cs-game-details-modal .cs-info-item h4 {
+    color: var(--secondary-color);
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    font-family: var(--font-2);
+    font-weight: 600;
+}
+
+.cs-game-details-modal .cs-info-item p {
+    margin: 0;
+    color: var(--text-color);
+    line-height: 1.6;
+    font-family: var(--font-1);
+    font-size: 16px;
+}
+
+.cs-game-details-modal .cs-participants-section h3 {
+    color: var(--text-color);
+    margin: 0 0 20px 0;
+    font-size: 22px;
+    font-family: var(--font-2);
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.cs-game-details-modal .cs-participants-section h3::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--secondary-color);
+}
+
+.cs-game-details-modal .cs-modal-participants-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+.cs-game-details-modal .cs-modal-participant {
+    display: flex;
+    align-items: center;
+    background-color: rgba(26, 32, 44, 0.5);
+    padding: 12px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.cs-game-details-modal .cs-modal-participant:hover {
+    background-color: rgba(26, 32, 44, 0.8);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cs-game-details-modal .cs-modal-participant img,
+.cs-game-details-modal .cs-modal-participant .cs-participant-icon-placeholder {
+    margin-right: 12px;
+}
+
+.cs-game-details-modal .cs-modal-participant span {
+    color: var(--text-color);
+    font-size: 16px;
+    font-family: var(--font-1);
+}
+
+.cs-games-container .cs-no-participants {
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+    text-align: center;
+    padding: 20px;
+    font-family: var(--font-3);
+}
+
+.cs-games-container .cs-loading {
+    text-align: center;
+    padding: 50px 30px;
+    font-size: 20px;
+    color: var(--text-color);
+    font-family: var(--font-1);
+}
+
+.cs-games-container .cs-loading::after {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    border: 2px solid var(--text-color);
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+    to {transform: rotate(360deg);}
+}
+
+.cs-games-container .cs-error-message {
+    text-align: center;
+    padding: 30px;
+    font-size: 18px;
+    color: #e74c3c;
+    background-color: rgba(231, 76, 60, 0.1);
+    border: 1px solid #e74c3c;
+    border-radius: 8px;
+    font-family: var(--font-1);
+}
+
+/* Empty participant slots */
+.cs-games-container .cs-participant.cs-empty-slot {
+    opacity: 0.5;
+    background-color: rgba(26, 32, 44, 0.3);
+}
+
+.cs-games-container .cs-participant.cs-empty-slot .cs-participant-icon {
+    background-color: rgba(26, 32, 44, 0.5);
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .cs-games-container {
+        padding: 10px;
+    }
+
+    .cs-games-container .cs-main-title {
+        font-size: 32px;
+        margin-bottom: 25px;
+    }
+
+    .cs-games-container .cs-section-title {
+        font-size: 28px;
+    }
+
+    .cs-games-container .cs-games-grid {
+        gap: 15px;
+    }
+
+    .cs-games-container .cs-game-card {
+        max-width: 100%;
+    }
+
+    .cs-game-details-modal .cs-modal-participants-list {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+/* Styling for games section */
+.cs-games-container .cs-games-section {
+    margin-bottom: 60px;
+}
+
+/* Common styles for both current and past games */
+.cs-games-container .cs-games-section p {
+    text-align: center;
+    padding: 25px;
+    color: var(--text-color);
+    font-style: italic;
+    background-color: rgba(26, 32, 44, 0.3);
+    border-radius: 8px;
+    font-family: var(--font-3);
+}

@@ -1,0 +1,57 @@
+@import "./Config.css";
+
+.header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+    box-sizing: border-box;
+}
+.bg-header{
+    background-color: var(--bg-color);
+}
+
+.header-nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.navbar-item{
+    text-decoration: none;
+    color: var(--text-color);
+    font-family: var(--font-1);
+    font-weight: 700;
+}
+.navbar-item:hover{
+    background: var(--secondary-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.logo{
+    max-width: 150px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.logo img{
+    width: 100%;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+    animation: shake 0.5s infinite; /* Efeito de tremedeira */
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(5px); }
+}

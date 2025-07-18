@@ -1,0 +1,98 @@
+/* Client Logos Section Styling */
+.client-logos-section {
+    margin-bottom: 150px;
+}
+
+.client-logos-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.client-logos-heading {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 40px;
+    font-family: var(--font-1);
+}
+
+.client-logos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 30px 20px;
+    justify-items: center;
+    align-items: center;
+}
+
+.client-logo-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+}
+
+.client-logo {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.client-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.client-logo:hover {
+    transform: scale(1.05);
+}
+
+/* Highlighted logos with yellow circles */
+.client-logo.highlighted {
+    position: relative;
+    padding: 15px;
+    border-radius: 50%;
+    border: 3px solid #ffff00;
+}
+
+.client-logo.highlighted img {
+    max-width: 75%;
+    max-height: 75%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .client-logos-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 20px 15px;
+    }
+
+    .client-logo-item {
+        height: 70px;
+    }
+
+    .client-logo {
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .client-logos-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px 10px;
+    }
+
+    .client-logo-item {
+        height: 60px;
+    }
+
+    .client-logos-heading {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+}

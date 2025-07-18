@@ -1,0 +1,106 @@
+.information{
+    display: flex;
+    margin-top: 100px;
+    flex-direction: column;
+    gap: 150px;
+    margin-bottom: 50px;
+    color: var(--text-color);
+    font-family: var(--font-1);
+}
+.information-left{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+}
+.information-right{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    text-align: right;
+}
+
+.information-image{
+    max-width: 600px;
+}
+.information-texts{
+    max-width: 500px;
+}
+.information-texts-title {
+    font-size: 48px;
+    font-weight: 900;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.information-left .information-texts-title::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: white;
+}
+
+.information-right .information-texts-title::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    width: 80px;
+    height: 4px;
+    background: white;
+}
+
+.information-texts-paragraph, .information-texts-link {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-top: 20px;
+}
+
+.information-texts-link{
+    font-weight: 900;
+}
+
+@media (max-width: 1200px) {
+    .information {
+        margin-top: 50px;
+        gap: 80px;
+    }
+
+    .information-left,
+    .information-right {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 40px; /* Espaçamento maior entre imagem e texto */
+    }
+
+    .information-image {
+        max-width: 100%;
+        width: 90%;
+    }
+
+    .information-texts {
+        max-width: 100%;
+        padding: 0 30px;
+    }
+
+    .information-texts-title {
+        font-size: 36px; /* Tamanho reduzido para telas menores */
+    }
+
+    .information-left .information-texts-title::after,
+    .information-right .information-texts-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .information-texts-paragraph,
+    .information-texts-link {
+        font-size: 18px;
+        margin-top: 15px;
+    }
+}
+

@@ -1,0 +1,86 @@
+/* Form.css */
+
+.form-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--gradient-black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+
+.form-container {
+    background: var(--gradient-blue-inverted);
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    font-family: 'Anonymous Pro', sans-serif;
+}
+
+.form-logo {
+    max-width: 60px;
+    margin: 10px 0;
+}
+
+.form-description {
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    text-align: left;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.form-input {
+    width: 95%;
+    padding: 8px;
+    border: 1px solid #d1d5db;
+    border-radius: 5px;
+}
+.checkout{
+    width: 100%;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--gradient-black);
+    box-shadow: 0 0 5px var(--gradient-black);
+}
+
+.form-submit-button {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-submit-button:hover {
+    background-color: black;
+}
+
+@media screen and (max-width: 700px) {
+    .form-container {
+        max-width: 230px;
+    }
+
+}

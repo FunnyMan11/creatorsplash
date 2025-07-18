@@ -1,0 +1,73 @@
+.wrapper {
+    overflow: hidden;
+    max-width: 95%;
+    max-height: 95vh;
+    margin: 0 auto;
+}
+
+.frame-container {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+}
+
+.frame-container video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+/* YouTube Subscribe Button */
+.youtube-subscribe-btn {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff0000;
+    color: white;
+    padding: 16px 40px;  /* Increased padding */
+    border-radius: 6px;
+    font-family: var(--font-1);
+    font-weight: 700;
+    font-size: 22px;  /* Larger font size */
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;  /* Slightly more space between icon and text */
+    transition: all 0.3s ease;
+    text-decoration: none;
+    z-index: 10;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1.5px;  /* Increased letter spacing */
+}
+
+.youtube-subscribe-btn i {
+    font-size: 30px;  /* Larger icon */
+}
+
+.youtube-subscribe-btn:hover {
+    background-color: white;
+    color: black;
+    transform: translateX(-50%) rotate(-2deg) scale(1.1);
+    box-shadow: 0 8px 30px rgba(255, 0, 0, 0.6);
+}
+
+/* Maintain reasonable size on mobile */
+@media (max-width: 768px) {
+    .youtube-subscribe-btn {
+        bottom: 40px;
+        padding: 14px 30px;
+        font-size: 18px;
+    }
+
+    .youtube-subscribe-btn i {
+        font-size: 24px;
+    }
+}

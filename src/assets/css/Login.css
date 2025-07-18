@@ -1,0 +1,323 @@
+/* Login.css - Modern design for Creator Splash admin login */
+
+.login-page {
+    background-color: #121620;
+    background-image: linear-gradient(to bottom right, rgba(18, 22, 32, 0.97), rgba(18, 22, 32, 0.95)),
+    url('https://imgur.com/J7dEfZF.png');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: var(--font-1);
+    padding: 20px;
+}
+
+.login-container {
+    display: flex;
+    background: rgba(35, 39, 50, 0.7);
+    border-radius: 20px;
+    overflow: hidden;
+    width: 900px;
+    max-width: 90%;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    position: relative;
+    border: 1px solid rgba(155, 89, 182, 0.2);
+}
+
+.login-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(125deg, transparent 30%, rgba(155, 89, 182, 0.1) 80%);
+    z-index: 0;
+}
+
+.login-left {
+    flex: 1;
+    padding: 40px;
+    background: url('https://imgur.com/J7dEfZF.png') no-repeat center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.login-left::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(125deg, rgba(155, 89, 182, 0.8), rgba(108, 99, 255, 0.8));
+    z-index: 0;
+}
+
+.login-logo {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.login-logo img {
+    width: 120px;
+    height: auto;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+.login-welcome {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+}
+
+.login-welcome h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.login-welcome p {
+    font-size: 16px;
+    opacity: 0.9;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.login-right {
+    flex: 1;
+    padding: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.login-header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.login-header h2 {
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.login-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #9B59B6, #6C63FF);
+    border-radius: 2px;
+}
+
+.error-message {
+    display: flex;
+    align-items: center;
+    background-color: rgba(229, 62, 62, 0.15);
+    border-left: 4px solid #E53935;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.error-icon {
+    margin-right: 10px;
+    font-size: 18px;
+    color: #E53935;
+}
+
+.login-form {
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 14px 15px 14px 45px;
+    background-color: rgba(18, 22, 32, 0.5);
+    border: 1px solid rgba(155, 89, 182, 0.3);
+    border-radius: 50px;
+    color: white;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.login-form input:focus {
+    outline: none;
+    border-color: #9B59B6;
+    box-shadow: 0 0 0 3px rgba(155, 89, 182, 0.2);
+    background-color: rgba(30, 35, 45, 0.5);
+}
+
+.login-form input {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    padding: 14px 15px 14px 45px;
+}
+
+.login-form input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.login-button {
+    width: 100%;
+    background: linear-gradient(90deg, #9B59B6, #6C63FF);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(155, 89, 182, 0.3);
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.login-button:hover {
+    background: linear-gradient(90deg, #8e44ad, #5A57D9);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(155, 89, 182, 0.4);
+}
+
+.login-button:active {
+    transform: translateY(-1px);
+}
+
+.login-button.loading {
+    text-indent: -9999px;
+}
+
+.login-button.loading::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-top-color: white;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.login-footer {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+        max-width: 400px;
+    }
+
+    .login-left {
+        padding: 30px;
+        height: 180px;
+    }
+
+    .login-logo img {
+        width: 80px;
+    }
+
+    .login-welcome h1 {
+        font-size: 22px;
+    }
+
+    .login-welcome p {
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+
+    .login-right {
+        padding: 30px;
+    }
+
+    .login-container::before {
+        width: 100%;
+        background: linear-gradient(180deg, transparent 30%, rgba(155, 89, 182, 0.1) 80%);
+    }
+}
+
+@media (max-width: 480px) {
+    .login-left {
+        padding: 20px;
+        height: 150px;
+    }
+
+    .login-right {
+        padding: 20px;
+    }
+
+    .login-header h2 {
+        font-size: 20px;
+    }
+
+    .login-form input {
+        padding: 12px 15px 12px 40px;
+        font-size: 14px;
+    }
+
+    .login-button {
+        padding: 12px;
+        font-size: 14px;
+    }
+}

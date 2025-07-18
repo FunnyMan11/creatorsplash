@@ -1,0 +1,119 @@
+/* Fonte global using the variable --font-1 */
+.faq {
+    padding: 150px 20px;
+    font-family: var(--font-3);
+    color: var(--text-color);
+}
+
+/* Container interno com largura fixa */
+.faq-container {
+    width: 900px;       /* Largura fixa */
+    margin: 0 auto;
+}
+
+/* Conteúdo principal do FAQ */
+.faq-content {
+    margin: 0 auto;
+}
+
+/* Título principal do FAQ */
+.faq-title {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    position: relative;
+    text-align: center;
+    font-family: var(--font-2);
+}
+
+.faq-text {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* Estilização dos <details> */
+details {
+    margin-bottom: 24px;  /* Espaçamento reduzido entre os itens */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 12px;
+}
+
+/* O título resumido (pergunta) em negrito */
+/* Remove a seta padrão em navegadores que a exibem */
+details summary {
+    list-style: none;
+    cursor: pointer;
+    font-size: 1.4rem;
+    position: relative;
+    outline: none;
+    margin: 0;
+    padding: 0 30px 0 0; /* Padding para o ícone não sobrepor o texto */
+    font-weight: 900;
+    transition: color 0.3s ease;
+}
+
+/* Remove o marcador padrão do summary (para Chrome/Safari) */
+details summary::-webkit-details-marker {
+    display: none;
+}
+/* Remove o marcador padrão do summary (para Firefox) */
+details summary::marker {
+    display: none;
+}
+
+/* Ícone (+) que aparece à direita do summary */
+details summary::after {
+    content: "+";
+    position: absolute;
+    right: 0;
+    font-weight: bold;
+    color: var(--secondary-color);   /* Cor do ícone */
+    transition: transform 0.3s ease;
+    font-size: 1.6rem;
+}
+
+/* Ao abrir, o título muda para a cor fixa e o ícone para (-) */
+details[open] summary {
+    color: var(--secondary-color);
+}
+details[open] summary::after {
+    content: "-";
+    color: var(--secondary-color);
+}
+
+/* Smooth transition for answer content */
+.details-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    padding-top: 10px;
+    padding-bottom: 0;
+    will-change: max-height, opacity;
+}
+
+.details-content p {
+    margin: 0;
+    padding: 0 0 10px 0;
+}
+
+/* Destaque ao passar o mouse sobre o summary (opcional) */
+details summary:hover {
+    color: var(--secondary-color);
+}
+
+/* Media query for mobile devices */
+@media (max-width: 950px) {
+    .faq-container {
+        width: 100%;
+    }
+
+    .faq-title {
+        font-size: 36px;
+    }
+
+    details summary {
+        font-size: 1.2rem;
+    }
+}
